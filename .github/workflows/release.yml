@@ -1,0 +1,27 @@
+name: release
+
+on:
+    push:
+        tags:
+            - "v*.*.*"
+
+jobs:
+    build-linux:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v1
+
+            - name: Install gcc
+              run: sudo apt update && sudo apt install build-essential
+
+            - name: Build
+              run: make -B
+
+            - name: Release
+              uses: softprops/action-gh-release@v1
+              with:
+                  files: gram
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
