@@ -43,6 +43,13 @@ make
 Alternatively, you can download and install pre-built binaries for Linux under
 the [Releases Tab](https://github.com/umcconnell/gram/releases).
 
+If you are using the downloaded binary, you must not forget to first make it
+executable:
+
+```
+chmod a+x ./gram
+```
+
 ## Usage
 
 Usage: `gram [optional: filename]`
