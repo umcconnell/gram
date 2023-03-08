@@ -11,6 +11,22 @@ char *C_HL_keywords[] = {"switch", "if", "while", "for", "break", "continue",
                          "int|", "long|", "double|", "float|", "char|",
                          "unsigned|", "signed|", "void|", NULL};
 
+// Java
+char *JAVA_HL_extensions[] = { ".java", NULL };
+char *JAVA_HL_keywords[] = { "abstract", "assert", "break", "case", "catch",
+                            "class", "continue", "default", "do", "else",
+                            "enum", "extends", "final", "finally", "for",
+                            "if", "implements", "import", "instanceof",
+                            "interface", "native", "new", "null", "package",
+                            "private", "public", "return", "static", "strictfp",
+                            "super", "switch", "synchronized", "this", "throw",
+                            "throws", "transient", "try", "void", "volatile",
+                            "while",
+
+                            // Types end with |
+                            "byte|", "short|", "int|", "long|", "float|",
+                            "double|", "boolean|", "char|", NULL };
+
 // Rust
 char *RUST_HL_extensions[] = {".rs", NULL};
 char *RUST_HL_keywords[] = {
@@ -59,6 +75,9 @@ char *JS_HL_keywords[] = {
 
 struct editorSyntax HLDB[] = {
     {"c", C_HL_extensions, C_HL_keywords, "//", "/*", "*/",
+     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS | HL_AUTO_INDENT},
+
+    {"java", JAVA_HL_extensions, JAVA_HL_keywords, "//", "/*", "*/",
      HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS | HL_AUTO_INDENT},
 
     {"rust", RUST_HL_extensions, RUST_HL_keywords, "//", "/*", "*/",

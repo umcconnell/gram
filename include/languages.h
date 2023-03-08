@@ -1,4 +1,4 @@
-#define GRAM_SUPPORTED_LANGUAGES 4
+#define GRAM_SUPPORTED_LANGUAGES 5
 
 typedef struct editorSyntax
 {
